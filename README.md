@@ -1,5 +1,5 @@
 # upy-mqtt-framework
-Simlpe MQTT framework for using a ESP32 with Micropython and MQTT.  
+Simlpe MQTT framework for using a ESP32 with Micropython.  
 
 ## Requirements
 - Basic understanding/experience with microcontroller boards.
