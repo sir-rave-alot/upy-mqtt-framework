@@ -52,7 +52,7 @@ while True:
         ucb.userloop()  # update publish queue
         
     # publish if available
-    if len(ucb.publish_queue) > 0:
+    while len(ucb.publish_queue) > 0:
         pub = ucb.publish_queue.pop(0)
         mqtt_client.publish(pub[0], pub[1])
   except OSError as e:
