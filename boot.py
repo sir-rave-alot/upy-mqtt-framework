@@ -45,7 +45,6 @@ try:
             ssid            = _cfg["ssid"]
             password        = _cfg["key"]
             mqtt_server     = _cfg["mqtt"]["broker-addr"]
-            mqtt_publishes  = _cfg["mqtt"]["publishes"]
             print("[Success]")
         except KeyError:
             print("[Fail] Bad configuration.")
@@ -54,7 +53,6 @@ except OSError:
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 mqtt_client_id = ubinascii.hexlify(machine.unique_id())
-mqtt_nof_pub   = len(mqtt_publishes)
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # NETWORK CONNECTION
