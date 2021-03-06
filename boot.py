@@ -36,6 +36,8 @@ try:
     print("[Success]")
 except OSError:
     print("[Fail] Mount failed.")
+    print("[Info] Loading default configuration from internal memory.")
+    SDC_MOUNTPOINT = "."
 # READ CONFIGURATION
 try:
     print("Read configuration ...")
