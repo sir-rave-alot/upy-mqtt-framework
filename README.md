@@ -7,17 +7,21 @@ Simlpe MQTT framework for using a ESP32 with Micropython.
 - Basic understanding/experience with MQTT.
 - ESP32 Device with
   - micropython installation
-  - connected MicroSD slot
-- MicroSD card (tested with FAT32 formatting)
+  - (optional) connected MicroSD slot
+- (optional) MicroSD card (tested with FAT32 formatting)
 - running MQTT broker
 
-## Usage
+## Instructions
+### Usage with MircroSD card
 1. Write `boot.py` and `main.py` to your IoT device's internal flash.
 2. Put your network configuration file `config.js` on the MicroSD card (see section "Configuration File")
 3. Put your callback file `callbacks.py` on the MicroSD card (see section "Callback File")
 4. Populate the ESP32 board with the MicroSD card
 
 Now you can power the device. Error log is available via serial port.
+
+### Usage without MircroSD card
+If no MicroSD card can be mounted during the power up, the device tries to `config.js` and `callbacks.py` from the internal flash. Therefore you can simply store these files on the internal flash, just as `boot.py` and `main.py`.
 
 ### Configuration File
 
@@ -61,7 +65,7 @@ Use the example file in this repo as a starting point.
 The following is some pseudo-code to depict the functionality:
 ```
 Run boot.py:
-   1. Mount MicroSD card
+   1. Mount MicroSD card (If no sucess: try to load files from internal flash)
    2. Read network configuration and broker address
    3. Connect to network
 
